@@ -1,0 +1,6 @@
+---
+- name: Captura de Estado Windows
+  hosts: WinTest
+  gather_facts: yes
+  roles:
+    - Data_Win

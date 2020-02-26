@@ -1,0 +1,11 @@
+---
+- name: Verificando...
+  raw: ((Get-Host).CurrentUICulture).name
+  register: Languaje
+- name: Varificando ...
+  include: Win_ES.yml
+  when: Languaje.stdout == "es-ES\r\n"
+- name: Varificando ...
+  include: Win_US.yml
+  when: Languaje.stdout == "es-US\r\n"
+- debug: msg={{ Languaje.stdout }}
